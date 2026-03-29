@@ -899,10 +899,28 @@ export default function App(){
           mobile:participant.mobile||"", education:participant.edu||"",
           referral:participant.referral||participant.purpose||"",
           assessor:examiner||"", notes:"",
-          vista_total:cl.d1?.CQ||"", vista_percentile:cl.d1?.pctRank||"",
+          // D1 Cognitive
+          vista_cq:cl.d1?.CQ||"", vista_percentile:cl.d1?.pctRank||"",
           vista_band:cl.d1?.band||"", vista_label:cl.d1?.label||"",
-          vista_cog:cl.d1?.CQ||"", vista_personality:cl.d2?.BFprimaryScore||"",
-          vista_health:cl.d4?.overallWBI||"", vista_risk:cl.d5?.overallRisk||"",
+          vista_cogStyle:cl.d1?.primaryStyle||"",
+          // D2 Personality
+          vista_dsmCluster:cl.d2?.dsmCluster||"", vista_dsmFeatures:cl.d2?.dsmFeatures||"",
+          bfi_O:cl.d2?.BFt?.O||"", bfi_C:cl.d2?.BFt?.C||"", bfi_E:cl.d2?.BFt?.E||"",
+          bfi_A:cl.d2?.BFt?.A||"", bfi_N:cl.d2?.BFt?.N||"",
+          // D3 EQ
+          vista_eq:cl.d3?.EQSS||"", vista_eqBand:cl.d3?.eqBand?.band||"",
+          // D4 Health
+          vista_mhi:cl.d4?.MHI||"", vista_anxIdx:cl.d4?.anxIdx||"",
+          vista_depIdx:cl.d4?.depIdx||"", vista_physNorm:cl.d4?.physNorm||"",
+          vista_sfi:cl.d4?.SFI||"",
+          // D5 Risk
+          vista_sir_level:cl.d5?.SIR?.level||"", vista_sir_raw:cl.d5?.SIR_raw||"",
+          vista_sur_level:cl.d5?.SUR?.level||"", vista_sur_raw:cl.d5?.SUR_raw||"",
+          vista_cdr_level:cl.d5?.CDR?.level||"", vista_cdr_raw:cl.d5?.CDR_raw||"",
+          vista_cri:cl.d5?.CRI||"",
+          // SCSS codes
+          vista_shapeCode:(shapeSeq||[]).join(""), vista_colorCode:(colorSeq||[]).join(""),
+          vista_shadeCode:(shadeSeq||[]).join(""), vista_smileyCode:(smileySeq||[]).join(""),
         })}).catch(()=>{});
     }
     setStage("report");
